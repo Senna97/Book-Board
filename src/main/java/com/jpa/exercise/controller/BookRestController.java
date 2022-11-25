@@ -14,11 +14,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/books")
-public class BookController {
+public class BookRestController {
 
     private final BookService bookService;
 
-    public BookController(BookService bookService) {
+    public BookRestController(BookService bookService) {
         this.bookService = bookService;
     }
 
@@ -28,7 +28,7 @@ public class BookController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Book> fwr(@PathVariable Long id) {
+    public ResponseEntity<Book> find(@PathVariable Long id) {
         return ResponseEntity.ok().body(new Book());
     }
 }
